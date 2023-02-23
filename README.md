@@ -2,7 +2,7 @@
 
 This is the repository supporting the presentation "Copilot for R".
 
-* Presenter: [David Smith](https://www.linkedin.com/in/dmsmith/), Principal Cloud Advocate at Microsoft
+* Presenter & Author: [David Smith](https://www.linkedin.com/in/dmsmith/), Principal Cloud Advocate at Microsoft
 * Presented at: [New York Open Statistical Programming Meetup, 28 February 2023](https://www.meetup.com/nyhackr/events/291662590/) 
 * Presentation slides: [PDF](TODO)
 * Presentation video: [YouTube](TODO) 
