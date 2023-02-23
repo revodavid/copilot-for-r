@@ -6,3 +6,7 @@ openai <- function(prompt) {
     # Example:
     # openai("The quick brown fox jumps over the lazy dog. Translate into French:")
 
+    # retrieve API key from file, and set to environment variable OPENAI_API_KEY:
+    openai_key <- readLines("openai_key.txt")
+    Sys.setenv(OPENAI_API_KEY = openai_key)
+    

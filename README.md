@@ -16,11 +16,12 @@ TODO
 * [GitHub Copilot extension for VS Code](https://aka.ms/get-copilot)
 * [About GitHub Copilot](https://github.com/features/copilot/)
 * [GitHub Codespaces](https://github.com/features/codespaces)
-* [Visual Studio Code](https://code.visualstudio.com/) - Free editor available for Windows, Mac and Linux
+* [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=aiml-88899-davidsmi) - Free editor available for Windows, Mac and Linux
+* [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview?WT.mc_id=aiml-88899-davidsmi)
 
 # Thanks to
 
-* 
+* Iegor Rudnytskyi, author of the [`openai` package](https://github.com/irudnyts/openai).
 
 ## Image Credits
 
