@@ -6,7 +6,39 @@ openai <- function(prompt) {
     # Example:
     # openai("The quick brown fox jumps over the lazy dog. Translate into French:")
 
-    # retrieve API key from file, and set to environment variable OPENAI_API_KEY:
-    openai_key <- readLines("openai_key.txt")
-    Sys.setenv(OPENAI_API_KEY = openai_key)
+    # retrieve API key from file
+    OPENAI_KEY <- readLines("openai_key.txt")
+    Sys.setenv(OPENAI_API_KEY = OPENAI_KEY)
+     
+    # Edit the following line with the endpoint of the API. You can find this in the Azure portal under "Keys and Endpoint".
+    ENDPOINT <- "https://openai-test-20230120.openai.azure.com/"
+    VERSION <- "2022-12-01"
+    
+    # Edit the following line with the model you want to use. You can find this in the Azure portal under "Model Deployments"
+    DEPLOYMENT <- "text-davinci-002"
+
+    # create the JSON payload for the API
+    payload <- list(
+        prompt = prompt,
+        max_tokens = 100,
+        temperature = 0.9,
+        top_p = 1,
+        frequency_penalty = 0,
+        presence_penalty = 0,
+        stop = c("\n", "###")
+    )
+
+    # call the API
+    result <- http_post(
+        url = paste0(ENDPOINT, "v", VERSION, "/engines/", DEPLOYMENT, "/completions"),
+        body = payload,
+        encode = "json"
+    )
+    
+
+    # return the result
+    return(result$content$choices[[1]]$text)
+
+
+
     

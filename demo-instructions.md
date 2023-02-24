@@ -6,6 +6,10 @@ In R:
  - Install httr package
  - Install openai package
 
+ In root folder of repo:
+  - Create the file openai_key.txt and add your OpenAI API key
+    - In Azure OpenAI Service, click on "Keys and Endpoint" and copy the key
+
 # Create a new R function with the help of Copilot
 
 1. Create new empty file openai.R
