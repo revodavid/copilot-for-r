@@ -11,16 +11,19 @@ You can recreate the demos in the talk using the steps outlined below.
 
 TODO
 
-# Resources and Links
-
+# Resources 
 * [GitHub Copilot extension for VS Code](https://aka.ms/get-copilot)
 * [About GitHub Copilot](https://github.com/features/copilot/)
 * [GitHub Codespaces](https://github.com/features/codespaces)
 * [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=aiml-88899-davidsmi) - Free editor available for Windows, Mac and Linux
 * [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview?WT.mc_id=aiml-88899-davidsmi)
 
+# References
+* [ChatGPT Is a Blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web), Ted Chiang, The New Yorker (February 9, 2023)
+
 # Thanks to
 
+* [Damian Brady](https://github.com/damovisa) (GitHub), for many of the slides
 * Iegor Rudnytskyi, author of the [`openai` package](https://github.com/irudnyts/openai).
 
 ## Image Credits
