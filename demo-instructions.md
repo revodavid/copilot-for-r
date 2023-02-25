@@ -3,7 +3,7 @@ In VS code:
 - Install R Extension for Visual Studio Code
 
 In R:
- - Install httr package
+ - Install packages: httr, jsonlite, tidyverse, docopt, httpuv
  - Install openai package
 
  In root folder of repo:
