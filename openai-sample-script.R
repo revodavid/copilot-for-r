@@ -19,7 +19,7 @@ req
 actual_endpoint
 
 payload <- '{
-  "prompt": "Tell me a joke",
+  "prompt": "Write a limerick about the python language",
   "max_tokens": 100,
   "temperature": 1,
   "frequency_penalty": 0,
@@ -37,3 +37,8 @@ req <- request(target_url) %>%
 
 # req %>% req_dry_run()
 result <- req %>% req_perform()
+result %>% resp_raw()
+result %>% resp_body_json() -> completion
+cat(completion$choices[[1]]$text,"\n")
+
+
