@@ -1,5 +1,6 @@
 # Secret API key
 openai_key.txt
+curl_example.txt
 
 # History files
 .Rhistory
