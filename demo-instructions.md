@@ -1,13 +1,21 @@
+# Clone this repository
+```
+git clone https://github.com/revodavid/copilot-for-r
+```
+
+# Prepare your environment
+
+Install Visual Studio Code and R
+
 In VS code:
 - Install Copilot extension
 - Install R Extension for Visual Studio Code
 
 In R:
  - Install packages: httr, jsonlite, tidyverse, docopt, httpuv
- - Install openai package
-
+ 
  In root folder of repo:
-  - Create the file openai_key.txt and add your OpenAI API key
+  - Create the file openai_key.txt containing only your OpenAI API key 
     - In Azure OpenAI Service, click on "Keys and Endpoint" and copy the key
 
 # Create a new R function with the help of Copilot

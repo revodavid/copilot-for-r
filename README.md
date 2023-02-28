@@ -3,7 +3,7 @@
 This is the repository supporting the presentation "Copilot for R".
 
 * Presenter & Author: [David Smith](https://www.linkedin.com/in/dmsmith/), Principal Cloud Advocate at Microsoft
-* Presented at: [New York Open Statistical Programming Meetup, 28 February 2023](https://www.meetup.com/nyhackr/events/291662590/) 
+* Presented at: [New York Open Statistical Programming Meetup, 28 February 2023](https://www.meetup.com/nyhackr/events/291662590/) [See this repo on the date it was presented](TODO)
 * Presentation slides: [PDF](TODO)
 * Presentation video: [YouTube](TODO) 
 
@@ -12,9 +12,11 @@ You can recreate the demos in the talk using the steps described in [demo-instru
 # Resources 
 * [GitHub Copilot extension for VS Code](https://aka.ms/get-copilot)
 * [About GitHub Copilot](https://github.com/features/copilot/)
+    * [GitHub Copilot FAQs](https://github.com/features/copilot#faq)
 * [GitHub Codespaces](https://github.com/features/codespaces)
 * [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=aiml-88899-davidsmi) - Free editor available for Windows, Mac and Linux
 * [Azure OpenAI Service](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview?WT.mc_id=aiml-88899-davidsmi)
+* [Microsoft’s framework for building AI systems responsibly](https://blogs.microsoft.com/on-the-issues/2022/06/21/microsofts-framework-for-building-ai-systems-responsibly/) and [Responsible AI Standard, v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf)
 
 # References
 * [ChatGPT Is a Blurry JPEG of the Web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web), Ted Chiang, The New Yorker (February 9, 2023)

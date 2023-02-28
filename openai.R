@@ -12,7 +12,7 @@ MY_ENDPOINT <- "https://openai-test-20230120.openai.azure.com/"
 
 # Edit the following line with the model you want to use.
 # You can find options in the Azure portal under "Model Deployments"
-MY_DEPLOYMENT <- "text-davinci-002"
+MY_DEPLOYMENT <- "text-davinci-003"
 
 openai <- function(prompt, temperature=1,top_p=0.5,max_tokens=100,stop="null",
     OPENAI_API_KEY=MY_OPENAI_API_KEY,
