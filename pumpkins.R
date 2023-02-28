@@ -1,80 +1,46 @@
 library(tidyverse)
 
-# read in the pumpkin data
-pumpkins_all <- read_csv("US-pumpkins.csv")
-names(pumpkins_all)
+# read in the pumpkins data
+pumpkins <- read_csv("US-pumpkins.csv")
+names(pumpkins)
 
-# clean up column names
+# clean up colummn names
 library(janitor)
-pumpkins_all <- pumpkins_all %>% clean_names(case = "upper_camel")
-names(pumpkins_all)
+pumpkins <- clean_names(pumpkins)
+names(pumpkins)
 
-# get an overview of the data
-glimpse(pumpkins_all)
+# display an overview of the data
+glimpse(pumpkins)
 
-# select rows without any missing values
-pumpkins_all <- pumpkins_all %>% filter(!is.na(`Low Price`), !is.na(`High Price`), !is.na(Date))
+# display 5 random rows
+pumpkins %>% sample_n(5)
 
+# filter rows where "bushel" is found in the package column
+pumpkins %>% filter(str_detect(package, "bushel")) -> pumpkins
 
-# take a look at the first 5 rows
-head(pumpkins_all)
+# create a table of counts by item_size and color
+pumpkins %>% count(item_size, color)
 
-# count the number of NAs in each column
-colSums(is.na(pumpkins_all))
+# calculate high price per bushel as column ppb using package column
+pumpkins %>% mutate(ppb = high_price / case_when(
+    str_detect(package, "bushel") ~ 1,
+    str_detect(package, "1/2") ~ 1/2,
+    str_detect(package, "1/4") ~ 1/4,
+    str_detect(package, "1/9") ~ 1/9,
+    str_detect(package, "1/19") ~ 1/19
+)) -> pumpkins
 
-#extract columns for analysis
-pumpkins <- pumpkins_all %>% select(Package, `Low Price`, `High Price`, Date)
-head(pumpkins)
+# table of average ppb and count by package
+pumpkins %>% group_by(package) %>% summarise(avg_ppb = mean(ppb), count = n())
 
-# extract months from Date column
-library(lubridate)
+# table of average ppb and by package and quality
+pumpkins %>% group_by(package, condition) %>% summarise(avg_ppb = mean(ppb), count = n())
 
-# convert Date column to date format
-pumpkins <- pumpkins %>% mutate(Date = mdy(Date))
+# analysis of variance of ppb by origin, color and item_size
+model <- aov(ppb ~ origin + color + item_size, data=pumpkins)
 
-# extract month from Date column
-pumpkins <- pumpkins %>% mutate(month = month(Date))
-head(pumpkins)
+# display AOV table
+summary(model)
 
-# add a column for the average price
-pumpkins <- pumpkins %>% mutate(avg_price = (pumpkins$`Low Price` + pumpkins$`High Price`)/2)   
-head(pumpkins)
-
-# create a table of Package counts
-pumpkins %>% count(Package)
-
-# filter rows where "bushel" is detected in the Packages column
-pumpkin_bushel <- pumpkins %>% filter(grepl("bushel", Package))
-glimpse(pumpkin_bushel)
-nrow(pumpkin_bushel)
-pumpkin_bushel %>% count(Package)
-
-# calculate price per bushel
-pumpkin_bushel <- pumpkin_bushel %>% mutate(
-    price_per_bushel = case_when(
-        str_detect(Package, "1 1/9 bushel") ~ avg_price/(1+1/19),
-        str_detect(Package, "1/2 bushel") ~ avg_price*2,
-        .default = avg_price))
-head(pumpkin_bushel)
-
-# display a table of average price per bushel by month
-pumpkin_bushel %>% 
-    group_by(month) %>% 
-    summarise(avg_price = mean(price_per_bushel))
-
-# create a bar chart of average price per bushel by month
-pumpkin_bushel %>% 
-    group_by(month) %>% 
-    summarise(avg_price = mean(price_per_bushel)) %>%
-    ggplot(aes(x = month, y = avg_price)) +
-    geom_col() +
-    labs(x = "Month", y = "Average Price per Bushel", title = "Average Price per Bushel by Month")
-
-
-# create a bar chart of average price per bushel by month and package
-pumpkin_bushel %>% 
-    group_by(month, Package) %>% 
-    summarise(avg_price = mean(price_per_bushel)) %>%
-    ggplot(aes(x = month, y = avg_price, fill = Package)) +
-    geom_col() +
-    labs(x = "Month", y = "Average Price per Bushel", title = "Average Price per Bushel by Month and Package")
+# predict ppb for a pumpkin with the following characteristics
+predict(model, data.frame(origin = "OHIO", color = "ORANGE", item_size = "med"))
