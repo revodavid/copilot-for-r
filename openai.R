@@ -2,7 +2,7 @@ library(jsonlite)
 library(httr2)
 library(stringr)
 
-# retrieve API key from file and save to environment variable
+# Save your API key in the file openai_key.txt
 MY_OPENAI_API_KEY <- readLines("openai_key.txt")
 Sys.setenv(OPENAI_API_KEY = MY_OPENAI_API_KEY)
 

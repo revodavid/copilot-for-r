@@ -7,7 +7,12 @@ library(httr2)
 OPENAI_KEY <- readLines("openai_key.txt")
 Sys.setenv(OPENAI_API_KEY = OPENAI_KEY)
 
+# Edit the following line with the endpoint of the API.
+# You can find this in the Azure portal under "Keys and Endpoint".
 ENDPOINT <- "https://openai-test-20230120.openai.azure.com/"
+
+# Edit the following line with the model you want to use.
+# You can find options in the Azure portal under "Model Deployments"
 DEPLOYMENT <- "text-davinci-003"
 
 ##
@@ -71,7 +76,7 @@ openai("An unusual cat name is:", model="text-davinci-002", max_tokens=3)
 openai("An unusual cat name is:", model="text-davinci-002", max_tokens=4)
 
 # add tokens back to the prompt and regenerate
-newprompt <- "An unusually long name for a cat is: P"
+newprompt <- "An unusually long name for a cat is: W"
 for (i in 1:10) {
   completion <- openai(newprompt, 
                       model="text-davinci-002", 
@@ -80,7 +85,4 @@ for (i in 1:10) {
   newprompt <- paste0(newprompt, completion)
   print(newprompt)
 }
-
-
-openai("Respond with two words: a forename and a surname. An unusual baby name is:", model="text-davinci-003")
 
