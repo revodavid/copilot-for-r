@@ -7,6 +7,11 @@ This is the repository supporting the presentation "Copilot for R".
 * Presentation slides: [PDF](TODO)
 * Presentation video: [YouTube](TODO) 
 
+# Demos
+
+* [Copilot with R](demo-pumpkins-analysis-copilot.mp4)
+* [Azure OpenAI Service API](openai-demo-final.mp4)
+
 You can recreate the demos in the talk using the steps described in [demo-instructions.md](demo-instructions.md).
 
 # Resources 

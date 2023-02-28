@@ -76,7 +76,7 @@ openai("An unusual cat name is:", model="text-davinci-002", max_tokens=3)
 openai("An unusual cat name is:", model="text-davinci-002", max_tokens=4)
 
 # add tokens back to the prompt and regenerate
-newprompt <- "An unusually long name for a cat is: W"
+newprompt <- "An unusually long name for a cat is: C"
 for (i in 1:10) {
   completion <- openai(newprompt, 
                       model="text-davinci-002", 

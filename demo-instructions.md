@@ -29,12 +29,6 @@ In R:
 1. Open pumpkins.R and delete the contents. You can print it out or display it in an unsaved window to help you, but if you leave the contents in a file Copilot will use it to suggest its prompts, which is cheating.
 
 
-# Create a new R function with the help of Copilot
-
-1. Create new empty file openai.R
-2. Type: `openai <- function(prompt) {` and press tab.
-   * It should insert a nice intro comment for you
-3. Type: `# retrieve API key from file, and set to environment variable OPENAI_API_KEY:` and press TAB twice
-   * It should insert two lines of code
-   * NOTE: be sure to replace the API key in openai_key.txt with your own
+# Azuere OpenAI API Service demo
+Open the file openai-sample-script.R and run the R code.
 
