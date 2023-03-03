@@ -1,5 +1,6 @@
 # Secret API key
-openai_key.txt
+*_key.txt
+*_noshare.R
 curl_example.txt
 .lintr
 
